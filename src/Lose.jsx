@@ -26,10 +26,15 @@ function Lose() {
         <div className='py-2 w-52 bg-black text-white text-center m-auto rounded-[8px] hover:bg-[#D9D9D9]'>
         <Link to={'/Game'}>
           <button onClick={()=> {
-            reset("");
+              reset("");
             Start();
           }}>Play AGAIN</button>
         </Link>
+        </div>
+        <div className='py-2 w-52 bg-black text-white text-center m-auto rounded-[8px] hover:bg-[#D9D9D9]'>
+        <Link to={'/Home'}>
+            <button onClick={()=> Start()}>Back To Home</button>
+          </Link>
         </div>
       </div>
       <div className='text-center'>
