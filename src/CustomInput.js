@@ -40,7 +40,7 @@ function CustumInput() {
           </div>
           <div className='py-2 w-52 bg-black text-white text-center m-auto rounded-[8px] hover:bg-[#7d7777]'>
             <button onClick={()=> {
-              check(first + second + third + forth + fifth);}} >SUBMIT</button>
+              check(first + second + third + forth + fifth);}}>SUBMIT</button>
           </div>
       </div>
     )
