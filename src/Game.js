@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useEffect } from 'react';
+import React from 'react';
 import CustumInput from './CustomInput';
 import Guess from './Guess';
 import { useStoreState } from 'easy-peasy';
@@ -10,10 +10,7 @@ function Game() {
     const tries = useStoreState((store)=> store.tries);
     const win = useStoreState((store)=> store.win);
     const lose = useStoreState((store)=> store.lose);
-    const Start = useStoreActions((state)=> state.Start);
-    useEffect(()=> {
-      Start();
-    },[])
+
     if (win){
       return (
         <Win></Win>
