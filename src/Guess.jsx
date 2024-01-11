@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import WordColor from './WordColor';
 import { useStoreState } from 'easy-peasy';
 
 export default function Guess() {
     const guess = useStoreState((state)=> state.words);
+    useEffect(()=> {
+        console.log("hello world ////");
+        return ()=> {
+            console.log("hello world !!!!");
+        }
+    },[])
   return (
     <div className=' text-white gap-1'>
     {Array.isArray(guess) && guess.map((word, index)=>{

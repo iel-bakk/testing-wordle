@@ -2,9 +2,11 @@ import { useState } from 'react';
 import './App.css';
 import { Link } from 'react-router-dom';
 import React from 'react';
+import { useStoreActions } from 'easy-peasy';
 
 function Home() {
     const [Rules, SetRules] = useState(false);
+    const Start = useStoreActions((state)=> state.Start);
   return (
     //parent container
     <div className='w-full h-screen flex flex-col items-center justify-between pt-32 pb-10'>
@@ -55,7 +57,7 @@ function Home() {
           </div>
           <div className='py-2 w-52 bg-white text-center m-auto rounded-[8px] hover:bg-[#D9D9D9]'>
           <Link to={'/Game'}>
-            <button>Play</button>
+            <button onClick={()=> Start()}>Play</button>
           </Link>
           </div>
         </div>}

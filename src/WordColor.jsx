@@ -1,7 +1,8 @@
+import { useStoreState } from 'easy-peasy'
 import React from 'react'
 
 export default function WordColor({char, index}) {
-    const correct = "GSUSS"
+    const correct = useStoreState((state)=> state.correctWord);
 
     if (char === correct[index])
         return (

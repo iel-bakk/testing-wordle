@@ -3,17 +3,23 @@ import React from 'react';
 import CustumInput from './CustomInput';
 import Guess from './Guess';
 import { useStoreState } from 'easy-peasy';
+import Win from './win';
+import Lose from './Lose';
 
 function Game() {
     const tries = useStoreState((store)=> store.tries);
-    // const win = useStoreState((store)=> store.win);
-    // if (win){
-    //   // redirect to win page
-    // }
-    // if (tries === 5) {
-    //   // handle logic to win or lose
-    // }
-    // const Verify = useStoreState((store)=> store.Verify)
+    const win = useStoreState((store)=> store.win);
+    const lose = useStoreState((store)=> store.lose);
+    if (win){
+      return (
+        <Win></Win>
+      )
+    }
+    else if (lose) {
+      return (
+        <Lose></Lose>
+      )
+    }
     return (
         <div className='w-full h-screen flex flex-col items-center justify-between pt-35 pb-6'>
             {/* logo container */}
@@ -30,9 +36,6 @@ function Game() {
                     </div>
                     {/* input feild */}
                       <CustumInput></CustumInput>
-                    {/* <div className='py-2 w-52 bg-black text-white text-center m-auto rounded-[8px] hover:bg-[#D9D9D9]'>
-                       <button>SUBMIT</button>
-                    </div> */}
                     <div className='bg-black text-white rounded'>
                       <Guess></Guess>
                     </div>
