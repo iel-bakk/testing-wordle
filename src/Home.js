@@ -26,7 +26,6 @@ function Home() {
                 <button onClick={()=> SetRules(false)} className='border border-white px-1 rounded-full'>X</button>
               </div>
             </div>
-            {/* put inside a componement */}
             <div>
               <ol>
                 <li>
